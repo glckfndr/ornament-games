@@ -1,0 +1,34 @@
+.button {
+  background-color: white;
+  /* padding: 10px 20px; */
+  border: 2px solid #bbbbbb;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  /* background-image: url(../../assets/p56_2.svg); */
+  margin: 0.5rem 0.1rem;
+  width: 5rem;
+  height: 5rem;
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+.button:hover {
+  box-shadow: var(--active-box-shadow);
+  text-shadow: var(--active-text-shadow);
+  background-color: pink;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+.button:disabled {
+  pointer-events: none;
+  box-shadow: var(--disabled-box-shadow);
+}
