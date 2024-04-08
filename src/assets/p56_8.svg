@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#666666;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	
+		.st1{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#171717;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#000000;stroke-width:0.8;stroke-miterlimit:10;}
+	
+		.st4{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#000000;stroke-width:0.45;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g>
+	<path class="st0" d="M53.96,96.73C138.45-11.65,294.93-31.02,403.3,53.46c108.34,84.45,127.76,240.96,43.28,349.34
+		C362.1,511.14,205.62,530.55,97.24,446.07C-11.1,361.59-30.52,205.07,53.96,96.73z"/>
+	<line class="st1" x1="147.79" y1="352.11" x2="147.76" y2="351.93"/>
+	<path class="st2" d="M250.27,497.28v-61.65l-94.34,42.86l23.41-58.03l-104.79,4.31l44.34-44.59l-97.96-36.14l59.21-24.34
+		L2.79,249.04h61.03l-41.69-93.55L78,178.63L75.24,75.04l42.96,42.96l37.03-96.55l23.69,57.17l-60.34,39.76l0.45,0.45L78.38,178.8
+		l0.97,0.38l-14.38,69.86h1.38l13.79,70.65l39.41,59.83l59.79,40.93l70.93,14.52v-1.24l70.65-13.79l59.83-39.41l40.93-59.76
+		l14.48-71h-0.03h-0.24l-13.76-71.76l75.69,71.76h-61l42.9,94.38l-58.03-23.38l4.31,104.76l-44.59-44.34l-36.1,97.96l-24.38-59.21
+		L250.27,497.28z M422.96,177.9l-40.03-60.76l-0.66,0.66l-60.45-41l104.24-2.79l-43,43l97.07,37.21L422.96,177.9z M320.96,77.49
+		l-71.14-14.62l-71.31,13.69l71.76-75.69v61.52l94.38-42.07L320.96,77.49z"/>
+	<path class="st3" d="M142.45,96.97c83.45-59.52,199.51-40.07,259.03,43.38c59.48,83.45,40.07,199.48-43.38,258.99
+		s-199.51,40.07-259.03-43.38S59,156.49,142.45,96.97z"/>
+	<g>
+		<g>
+			<line class="st4" x1="250.27" y1="-0.51" x2="250.27" y2="500"/>
+			<line class="st4" x1="0" y1="249.76" x2="500.54" y2="249.76"/>
+			<line class="st4" x1="73.31" y1="426.73" x2="427.23" y2="72.8"/>
+			<g>
+				<line class="st4" x1="154.51" y1="18.56" x2="346.03" y2="480.97"/>
+				<line class="st4" x1="19.07" y1="345.52" x2="481.47" y2="153.97"/>
+				<line class="st4" x1="154.51" y1="480.97" x2="346.03" y2="18.56"/>
+				<line class="st4" x1="481.47" y1="345.52" x2="19.07" y2="153.97"/>
+			</g>
+		</g>
+		<line class="st4" x1="427.23" y1="426.73" x2="73.31" y2="72.8"/>
+	</g>
+</g>
+</svg>
