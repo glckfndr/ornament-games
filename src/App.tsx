@@ -1,34 +1,20 @@
 import SequenceGame from "./components/Game/SequenceGame";
 import Button from "./components/Button/Button";
 import { sonechko, ornaments } from "./data/ornaments";
-import { CSSProperties, useState } from "react";
+import { useState } from "react";
 import classes from "./components/Button/Button.module.css";
 import { useFunctionArray } from "./hooks/useFunctionArray";
 
-// interface MyAction {
-//   action: string;
-//   f: () => void;
-// }
-
-//function reducer(state: (() => void)[], data: MyAction) {}
+const infoStyle = { width: "100%", height: "2rem", borderRadius: "7px" };
 
 function App() {
   const [answers, setAnswers] = useState<Set<string>>(new Set<string>());
-  const [ornamentList, setOrnamentList] = useState(Object.entries(ornaments));
   const { functionArray, pushFunction, clearFunctionArray, popFunction } =
     useFunctionArray();
-  //const { functions, dispatcher } = useReducer();
   const [message, setMessage] = useState("Вибери сонечко");
   const [level, setLevel] = useState(1);
-  //const rerender = useRerender();
-
-  //const rerender = useRerender();
-  const ostyle: CSSProperties = {
-    position: "relative",
-    bottom: "0",
-    transition: "bottom 0.4s ease-out",
-  };
-
+  const [active, setActive] = useState(true);
+  const ornamentList = Object.entries(ornaments);
   const correctAnswer = new Set(sonechko);
 
   const handleAnswer = (ans: string) => {
@@ -47,42 +33,53 @@ function App() {
         prev.clear();
         return prev;
       });
+      setActive(false);
     }
 
     if (answers.size === 2 && correctAnswer.difference(answers).size > 0) {
-      //console.log("You lose!");
       setMessage("Ти програв!");
-      // clearFunctions();
       setAnswers((prev) => {
         prev.clear();
         return prev;
       });
+      setActive(false);
     }
 
     if (correctAnswer.has(ans)) return true;
     return false;
   };
+  console.log("App render!");
   return (
-    <SequenceGame value={level}>
-      {ornamentList.map(([key, ornament]) => (
-        <Button
-          pushFunction={pushFunction as (arg: () => void) => void}
-          btnClass={classes.button}
-          style={ostyle}
-          handleClick={() => handleAnswer(key)}
-          key={key}
-          imagePath={ornament}
-        />
-      ))}
-
+    <SequenceGame>
+      <button style={infoStyle}>{"Вибери орнамент. Рівень: " + level}</button>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          maxWidth: "30rem",
+          flexWrap: "wrap",
+        }}
+      >
+        {ornamentList.map(([key, ornament]) => (
+          <Button
+            disabled={!active}
+            pushFunction={pushFunction as (arg: () => void) => void}
+            btnClass={classes.button}
+            handleClick={() => handleAnswer(key)}
+            key={key}
+            imagePath={ornament}
+          />
+        ))}
+      </div>
       <div>
         <button
+          style={infoStyle}
           onClick={() => {
-            //rerender();
             functionArray.forEach((f) => f());
             setMessage("Вибери сонечко");
             clearFunctionArray();
             setLevel((prev) => prev + 1);
+            setActive(true);
             console.log(functionArray);
           }}
         >

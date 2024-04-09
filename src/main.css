@@ -10,10 +10,17 @@
   --passive-text-shadow: 2px 2px #eadff9;
   --active-text-shadow: 2px 2px #e1ccff;
   --disabled-text-shadow: 2px 2px 0px 0px #e7e7e7;
+
 }
 
 body {
   font-family: Arial;
+  width: 100%;
+  margin: auto;
+}
+
+#root{
+  width: 100%;
 }
 
 h2 {

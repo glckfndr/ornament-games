@@ -1,30 +1,36 @@
 import React, { CSSProperties, useState } from "react";
 
-const getStyle = (
-  isToggled: boolean,
-  isCorrect: boolean,
-  imagePath: string,
-  styleIn: CSSProperties
-): CSSProperties => {
-  const buttonStyle0: CSSProperties = {
-    backgroundImage: `url(${imagePath})`,
-    backgroundSize: "cover",
-    backgroundColor: "#f07800",
-    position: "relative",
-    bottom: "-0.3rem",
-    transition: "bottom 0.4s ease-out",
-  };
+interface ButtonStyle {
+  isToggled: boolean;
+  isCorrect: boolean;
+  imagePath: string;
+  style: CSSProperties;
+}
 
-  const buttonStyle1: CSSProperties = {
-    backgroundImage: `url(${imagePath})`,
-    backgroundSize: "cover",
-    backgroundColor: "#007800",
-    position: "relative",
-    bottom: "-0.3rem",
-    transition: "bottom 0.4s ease-out",
-  };
+const initStyle: CSSProperties = {
+  backgroundSize: "cover",
+  position: "relative",
+  bottom: "0rem",
+  margin: "5px",
+  transition: "bottom 0.4s ease-out",
+};
 
-  return isToggled ? (isCorrect ? buttonStyle0 : buttonStyle1) : styleIn;
+const getStyle = ({
+  isToggled,
+  isCorrect,
+  imagePath,
+  style,
+}: ButtonStyle): CSSProperties => {
+  const baseStyle: CSSProperties = {
+    ...initStyle,
+    backgroundImage: `url(${imagePath})`,
+    bottom: "-0.3rem",
+  };
+  return isToggled
+    ? isCorrect
+      ? { ...baseStyle, backgroundColor: "#f07800" }
+      : { ...baseStyle, backgroundColor: "#007800" }
+    : style;
 };
 
 interface Props {
@@ -32,36 +38,40 @@ interface Props {
   handleClick: () => boolean;
   pushFunction: (arg: () => void) => void;
   btnClass: string;
-  style: CSSProperties;
+  disabled: boolean;
 }
 const Button = ({
   imagePath,
   handleClick,
   btnClass,
-  style,
   pushFunction,
+  disabled,
 }: Props) => {
   const [isToggled, setIsToggled] = useState(false);
-  const styleIn = {
-    ...style,
-    backgroundImage: `url(${imagePath})`,
-  };
-  const [styleX, setStyleX] = useState<CSSProperties>(styleIn);
+  const style = { ...initStyle, backgroundImage: `url(${imagePath})` };
+  const [buttonStyle, setButtonStyle] = useState<CSSProperties>(style);
 
   return (
     <button
       onClick={() => {
-        const isCorrect = handleClick();
         setIsToggled(!isToggled);
-        setStyleX(getStyle(!isToggled, isCorrect, imagePath, styleIn));
+        setButtonStyle(
+          getStyle({
+            isToggled: !isToggled,
+            isCorrect: handleClick(),
+            imagePath,
+            style,
+          })
+        );
         if (!isToggled)
           pushFunction(() => {
             setIsToggled(false);
-            setStyleX(styleIn);
+            setButtonStyle(style);
           });
       }}
       className={btnClass}
-      style={styleX}
+      style={buttonStyle}
+      disabled={disabled}
     ></button>
   );
 };
