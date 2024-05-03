@@ -1,24 +1,92 @@
-import React, { ReactNode } from "react";
+import { useState } from "react";
+import { useFunctionArray } from "../../hooks/useFunctionArray";
+import { sonechko } from "../../data/ornaments";
+import OrnamentList from "../OrnamentList/OrnamentList";
+import classes from "./Game.module.css";
+import Button from "../Button/Button";
 
-const gameStyle = {
-  maxWidth: "25rem",
-  display: "flex",
-  justifyContent: "center",
-  margin: "1rem auto",
-  padding: "1rem",
-  backgroundColor: "#345678",
-  borderRadius: "7px",
-  boxShadow: "0 0 4px 4px #777",
-};
-interface Props {
-  children: ReactNode;
-  value?: number;
-}
-const SequenceGame = ({ children, value }: Props) => {
-  //console.log(value);
+const SequenceGame = () => {
+  const [answers, setAnswers] = useState<Set<string>>(new Set<string>());
+  const { functionArray, pushFunction, clearFunctionArray, popFunction } =
+    useFunctionArray();
+
+  const [level, setLevel] = useState(1);
+  const [message, setMessage] = useState("Рівень: " + level);
+  const [active, setActive] = useState(true);
+  const [hideStyle, setHideStyle] = useState({ display: "none" });
+  const [nextMessage, setNextMessage] = useState("Наступний рівень");
+
+  const correctAnswers = [{ name: "Сонечко", answer: sonechko }];
+  const correctAnswer = new Set(correctAnswers[level - 1].answer);
+  const gameName = correctAnswers[level - 1].name;
+
+  const handleAnswer = (ans: string) => {
+    if (answers.has(ans)) {
+      setAnswers((prev) => {
+        const copy = new Set([...prev]);
+        copy.delete(ans);
+        return copy;
+      });
+      popFunction();
+    } else setAnswers(answers.add(ans));
+
+    if (answers.size === 2 && correctAnswer.difference(answers).size === 0) {
+      setMessage("Молодець, правильно!");
+      setNextMessage("Йдемо далі");
+
+      if (level < correctAnswers.length) {
+        setLevel((prevLevel) => prevLevel + 1);
+      }
+      setHideStyle({ display: "inline-block" });
+
+      setAnswers((prev) => {
+        prev.clear();
+        return prev;
+      });
+      setActive(false);
+    }
+
+    if (answers.size === 2 && correctAnswer.difference(answers).size > 0) {
+      setMessage("Неправильно!");
+      setNextMessage("Спробуй ще раз");
+      setAnswers((prev) => {
+        prev.clear();
+        return prev;
+      });
+      setActive(false);
+      setHideStyle({ display: "inline-block" });
+    }
+
+    if (correctAnswer.has(ans)) return true;
+    return false;
+  };
+
+  const handleClick = () => {
+    functionArray.forEach((f) => f());
+    setMessage("Рівень: " + level);
+    clearFunctionArray();
+    setActive(true);
+    setHideStyle({ display: "none" });
+  };
+
   return (
-    <div style={gameStyle}>
-      <div>{children}</div>
+    <div className={classes.game}>
+      <Button buttonClass={classes.info}>{`Вибери  ${gameName} `}</Button>
+      <OrnamentList
+        active={active}
+        handleAnswer={handleAnswer}
+        pushFunction={pushFunction}
+      />
+      <div style={{ display: "flex" }}>
+        <Button buttonClass={classes.info}>{message}</Button>
+        <Button
+          buttonClass={classes.info}
+          style={hideStyle}
+          handleClick={handleClick}
+        >
+          {nextMessage}
+        </Button>
+      </div>
     </div>
   );
 };
