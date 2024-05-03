@@ -30,31 +30,31 @@ const SequenceGame = () => {
       popFunction();
     } else setAnswers(answers.add(ans));
 
-    if (answers.size === 2 && correctAnswer.difference(answers).size === 0) {
-      setMessage("Молодець, правильно!");
-      setNextMessage("Йдемо далі");
+    if (answers.size === 2) {
+      if ([...answers].every((answ) => correctAnswer.has(answ))) {
+        setMessage("Молодець, правильно!");
+        setNextMessage("Йдемо далі");
 
-      if (level < correctAnswers.length) {
-        setLevel((prevLevel) => prevLevel + 1);
+        if (level < correctAnswers.length) {
+          setLevel((prevLevel) => prevLevel + 1);
+        }
+        setHideStyle({ display: "inline-block" });
+
+        setAnswers((prev) => {
+          prev.clear();
+          return prev;
+        });
+        setActive(false);
+      } else {
+        setMessage("Неправильно!");
+        setNextMessage("Спробуй ще раз");
+        setAnswers((prev) => {
+          prev.clear();
+          return prev;
+        });
+        setActive(false);
+        setHideStyle({ display: "inline-block" });
       }
-      setHideStyle({ display: "inline-block" });
-
-      setAnswers((prev) => {
-        prev.clear();
-        return prev;
-      });
-      setActive(false);
-    }
-
-    if (answers.size === 2 && correctAnswer.difference(answers).size > 0) {
-      setMessage("Неправильно!");
-      setNextMessage("Спробуй ще раз");
-      setAnswers((prev) => {
-        prev.clear();
-        return prev;
-      });
-      setActive(false);
-      setHideStyle({ display: "inline-block" });
     }
 
     if (correctAnswer.has(ans)) return true;
