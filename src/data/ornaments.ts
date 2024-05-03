@@ -27,4 +27,4 @@ export const ornaments = {
 };
 
 export const vitriachok = ["p56_8", "p56_12"];
-export const sonechko = ["p56_4", "p56_7"];
+export const sonechko = ["p56_4", "p56_5", "p56_7"];

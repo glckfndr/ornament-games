@@ -20,18 +20,18 @@ const SequenceGame = () => {
   const correctAnswer = new Set(correctAnswers[level - 1].answer);
   const gameName = correctAnswers[level - 1].name;
 
-  const handleAnswer = (ans: string) => {
-    if (answers.has(ans)) {
+  const handleAnswer = (currentAnswer: string) => {
+    if (answers.has(currentAnswer)) {
       setAnswers((prev) => {
         const copy = new Set([...prev]);
-        copy.delete(ans);
+        copy.delete(currentAnswer);
         return copy;
       });
       popFunction();
-    } else setAnswers(answers.add(ans));
+    } else setAnswers(answers.add(currentAnswer));
 
-    if (answers.size === 2) {
-      if ([...answers].every((answ) => correctAnswer.has(answ))) {
+    if ([...answers].every((answer) => correctAnswer.has(answer))) {
+      if (answers.size === sonechko.length) {
         setMessage("Молодець, правильно!");
         setNextMessage("Йдемо далі");
 
@@ -45,7 +45,9 @@ const SequenceGame = () => {
           return prev;
         });
         setActive(false);
-      } else {
+      }
+    } else {
+      if (![...answers].every((answer) => correctAnswer.has(answer))) {
         setMessage("Неправильно!");
         setNextMessage("Спробуй ще раз");
         setAnswers((prev) => {
@@ -57,7 +59,7 @@ const SequenceGame = () => {
       }
     }
 
-    if (correctAnswer.has(ans)) return true;
+    if (correctAnswer.has(currentAnswer)) return true;
     return false;
   };
 
