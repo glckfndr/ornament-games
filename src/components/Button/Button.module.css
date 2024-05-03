@@ -1,34 +1,48 @@
-.button {
+.btn {
   background-color: white;
   /* padding: 10px 20px; */
   border: 2px solid #bbbbbb;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
-  /* background-image: url(../../assets/p56_2.svg); */
-  margin: 0.5rem 0.1rem;
-  width: 5rem;
-  height: 5rem;
+  /* margin: 0.5rem 0.1rem; */
+  margin: 5px;
+  width: 7rem;
+  height: 7rem;
   font-size: 16px;
   font-weight: 400;
-
+  background-size: "cover";
+  bottom: 0;
+  position: relative;
+  transition: bottom 0.4s ease-out;
 }
 
-.button:hover {
+.btnCorrect {
+  bottom: -0.3rem;
+  background-color: #f07800;
+}
+
+.btnWrong {
+  bottom: -0.3rem;
+  background-color: #007800;
+}
+
+.btn:hover {
   box-shadow: var(--active-box-shadow);
   text-shadow: var(--active-text-shadow);
   background-color: pink;
 }
 
-.button:focus {
+.btn:focus {
   outline: none;
 }
 
-.button:active {
+.btn:active {
   transform: translate(3px, 3px);
   box-shadow: none;
 }
 
-.button:disabled {
+.btn:disabled {
   pointer-events: none;
   box-shadow: var(--disabled-box-shadow);
+  opacity: 0.5;
 }
