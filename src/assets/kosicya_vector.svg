@@ -1,17 +1,30 @@
-<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+   <style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#ffff00;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#B0B0B0;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#aa3600;stroke:#000000;stroke-width:0.51;stroke-miterlimit:10;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#0000fa;stroke:#000000;stroke-width:0.53;stroke-miterlimit:10;}
+
+		.st4{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#010101;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st5{fill-rule:evenodd;clip-rule:evenodd;fill:#0000fa;stroke:#000000;stroke-width:0.56;stroke-miterlimit:10;}
+	.st6{fill-rule:evenodd;clip-rule:evenodd;fill:#0000fa;stroke:#000000;stroke-width:0.55;stroke-miterlimit:10;}
+</style>
 <g clip-path="url(#clip0_47_974)">
-<path d="M198.66 185.6L172.09 88.6299L198.66 2.67993L225.23 88.6299L198.66 185.6Z" fill="#020203"/>
-<path d="M198.66 217.08L172.09 314.05L198.66 400L225.23 314.05L198.66 217.08Z" fill="#020203"/>
-<path d="M214.4 201.34L311.37 174.77L397.32 201.34L311.37 227.91L214.4 201.34Z" fill="#020203"/>
-<path d="M182.92 201.34L85.95 174.77L0 201.34L85.95 227.91L182.92 201.34Z" fill="#020203"/>
-<path d="M209.79 190.21L259.57 102.85L339.13 60.8699L297.15 140.43L209.79 190.21Z" fill="#020203"/>
-<path d="M187.53 212.47L100.17 262.25L58.1904 341.81L137.75 299.83L187.53 212.47Z" fill="#020203"/>
-<path d="M209.79 212.47L297.15 262.25L339.13 341.81L259.57 299.83L209.79 212.47Z" fill="#020203"/>
-<path d="M187.53 190.21L137.75 102.85L58.1904 60.8699L100.17 140.43L187.53 190.21Z" fill="#020203"/>
+<path class="st0" d="M198.66 185.6L172.09 88.6299L198.66 2.67993L225.23 88.6299L198.66 185.6Z" fill="#020203"/>
+<path class="st0" d="M198.66 217.08L172.09 314.05L198.66 400L225.23 314.05L198.66 217.08Z" fill="#F90203"/>
+<path class="st0" d="M214.4 201.34L311.37 174.77L397.32 201.34L311.37 227.91L214.4 201.34Z" fill="#020203"/>
+<path class="st0" d="M182.92 201.34L85.95 174.77L0 201.34L85.95 227.91L182.92 201.34Z" fill="#020203"/>
+<path class="st0" d="M209.79 190.21L259.57 102.85L339.13 60.8699L297.15 140.43L209.79 190.21Z" fill="#020203"/>
+<path class="st0" d="M187.53 212.47L100.17 262.25L58.1904 341.81L137.75 299.83L187.53 212.47Z" fill="#020203"/>
+<path class="st0" d="M209.79 212.47L297.15 262.25L339.13 341.81L259.57 299.83L209.79 212.47Z" fill="#020203"/>
+<path class="st0" d="M187.53 190.21L137.75 102.85L58.1904 60.8699L100.17 140.43L187.53 190.21Z" fill="#020203"/>
 </g>
 <defs>
 <clipPath id="clip0_47_974">
-<rect width="400" height="400" fill="white"/>
+<rect width="400" height="400" fill="red"/>
 </clipPath>
 </defs>
 </svg>

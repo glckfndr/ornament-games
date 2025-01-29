@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useFunctionArray } from "../../hooks/useFunctionArray";
-import { sonechko } from "../../data/ornaments";
+import { kosicya, sonechko, vinochok } from "../../data/ornaments";
 import { vitriachok } from "../../data/ornaments";
 import OrnamentList from "../OrnamentList/OrnamentList";
 import classes from "./Game.module.css";
@@ -33,6 +33,8 @@ const SequenceGame = () => {
   const correctAnswers = [
     { name: "сонечко", answer: sonechko },
     { name: "вітрячок", answer: vitriachok },
+    { name: "косиця", answer: kosicya },
+    { name: "віночок", answer: vinochok },
   ];
 
   const correctAnswer = new Set(correctAnswers[level.current - 1].answer);
