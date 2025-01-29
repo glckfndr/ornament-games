@@ -1,4 +1,3 @@
-import React from "react";
 import OrnamentButton from "../Button/OrnamentButton";
 import { ornaments } from "../../data/ornaments";
 

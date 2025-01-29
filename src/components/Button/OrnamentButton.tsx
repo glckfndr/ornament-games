@@ -28,7 +28,9 @@ const OrnamentButton = ({
   const handleClick = () => {
     setStyle({ isToggled: isToggled, isCorrect: handleAnswer() });
     setIsToggled((prev) => !prev);
-    if (!isToggled) pushFunction(restoreButtonState);
+    if (!isToggled) {
+      pushFunction(restoreButtonState);
+    }
   };
 
   return (

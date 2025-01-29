@@ -5,10 +5,7 @@ export function useFunctionArray() {
   const clearFunctionArray = () => setFunctionArray([]);
 
   const pushFunction = (f: () => void): void => {
-    setFunctionArray((prev) => {
-      const copy = [...prev];
-      return [...copy, f];
-    });
+    setFunctionArray((prev) => [...prev, f]);
   };
 
   const popFunction = (): void => {
